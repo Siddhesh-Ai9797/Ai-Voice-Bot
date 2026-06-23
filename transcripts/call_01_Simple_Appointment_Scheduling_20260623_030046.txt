@@ -1,0 +1,34 @@
+Scenario: Simple Appointment Scheduling
+Call SID: CA35a779c4c81d537b0721a563af5532f2
+Time: 2026-06-23 03:00:46.442673
+==================================================
+
+PATIENT: Hi, this is John Smith. I'm calling to schedule a regular checkup appointment for next week, preferably in the morning.
+AGENT: On.
+PATIENT: Sure, I can hold.
+AGENT: I just need your date of birth to continue.
+PATIENT: Sure, it's March 15, 1989.
+AGENT: Thanks John. Just to confirm you'd like to schedule a general office. Visit for a routine check-up, correct.
+PATIENT: Yes, that's correct.
+AGENT: Do you have a specific provider? You'd like to see? Or are you open to any available provider?
+PATIENT: I'm open to any available provider.
+AGENT: It looks like you already have a routine checkup appointment booked.
+PATIENT: Oh, I wasn't aware. Could you please confirm the date and time for me?
+AGENT: cancel that
+PATIENT: Okay, please go ahead and cancel it. Then can we reschedule it for next week, preferably in the morning?
+AGENT: Appointment.
+PATIENT: Yes, I'm looking to reschedule for next week, in the morning if possible.
+AGENT: Clarify. Would you like, would you like to reschedule your existing appointment, or would you prefer to cancel it?
+PATIENT: I'd like to cancel the existing appointment and schedule a new one for next week, please.
+AGENT: Let me cancel your current appointment.
+PATIENT: Thank you. Once it's canceled, can we proceed with scheduling a new one?
+AGENT: 1 moment.
+PATIENT: Sure, I'll hold.
+AGENT: Let me check for available appointments for a routine checkup next week.
+PATIENT: Great, thank you. I'll wait.
+AGENT: A new routine. I'm unable to book a new routine checkup until your current 1 is canceled. Would you like me to connect you to a live support agent to help with this?
+PATIENT: Yes, please connect me to a live support agent. Thank you.
+AGENT: Connecting you to a representative.
+PATIENT: Thank you.
+AGENT: You reached the pretty good. AI test line, goodbye.
+PATIENT: Thank you, goodbye.

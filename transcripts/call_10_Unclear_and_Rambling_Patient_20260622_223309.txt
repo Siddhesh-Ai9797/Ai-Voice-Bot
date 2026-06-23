@@ -1,0 +1,32 @@
+Scenario: Unclear and Rambling Patient
+Call SID: CAcefd786edc8ad581a02da0059878fb08
+Time: 2026-06-22 22:33:09.695380
+==================================================
+
+PATIENT: Hi there, this is Patricia Martinez. I was wondering if I could schedule an appointment.
+AGENT: Part of pretty good. AI. Am I speaking with John?
+PATIENT: No, I'm not John. I called to ask about scheduling an appointment. Could you help me with that?
+AGENT: I can help you schedule an appointment. Are you calling a book for yourself or for someone else?
+PATIENT: I'm calling to book for myself.
+AGENT: Please provide your full name and date of birth.
+PATIENT: Sure, it's Patricia Martinez, and my date of birth is December 1, 1965.
+AGENT: I have your name as Patricia Martinez and your date of birth as December 1st. 1965
+PATIENT: Yes, that's correct.
+AGENT: last name to
+PATIENT: Yes, my last name is Martinez.
+AGENT: Could you please spell Please spell your first and last name for me.
+PATIENT: Certainly, it's P-A-T-R-I-C-I-A M-A-R-T-I-N-E-Z.
+AGENT: Would you like to use your phone number to look up your record if so, please provide the number you have on file with us.
+PATIENT: Yes, that's fine. The number on file should be 555-123-4567.
+AGENT: Again, please tell me the phone number. You have on file with us.
+PATIENT: Of course, it's 555-123-4567.
+AGENT: I have your phone number is 5551234567 and your date of birth is December 1st. 1965?
+PATIENT: Yes, that's correct.
+AGENT: Please confirm your date of birth for me.
+PATIENT: Sure, it's December 1, 1965.
+AGENT: I can't proceed further right now but I can make sure our claim support team follows up with you.
+PATIENT: I understand, but I really need to schedule an appointment. Is there any way you can help me with that right now?
+AGENT: Connecting you to a representative.
+PATIENT: Thank you, I appreciate it.
+AGENT: Hello, you've reached the pretty good. AI test line, goodbye.
+PATIENT: Thank you, goodbye.

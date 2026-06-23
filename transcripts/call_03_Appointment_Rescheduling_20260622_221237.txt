@@ -1,0 +1,32 @@
+Scenario: Appointment Rescheduling
+Call SID: CAb904e3a3ea266fe022225cb97a61aacc
+Time: 2026-06-22 22:12:37.990485
+==================================================
+
+PATIENT: Hi, this is David Lee. I need to reschedule my appointment originally set for this Thursday at 2pm.
+AGENT: Part of pretty good. AI. Am I speaking with John?
+PATIENT: No, this is David Lee. I'm calling to reschedule my appointment.
+AGENT: Thanks for letting me know David.
+PATIENT: Sure, can you help me find a new time? I can do mornings before 11am or after 4pm any day next week.
+AGENT: I can help with that, please provide the full name and date of birth of the patient whose appointment you want to reschedule.
+PATIENT: Sure, it's David Lee, and my date of birth is November 3, 1997.
+AGENT: Just to confirm, I have your name as David Lee and your date of birth as November 3rd, 1997.
+PATIENT: That's correct.
+AGENT: Could you please?
+PATIENT: Could you please let me know the available times next week?
+AGENT: Would you like?
+PATIENT: Could you please provide the available appointment times next week that fit my schedule?
+AGENT: This will help me. I just need your phone number to continue with the rescheduling process. Could you share the number? You have on file with us?
+PATIENT: Sure, my phone number is 555-0123.
+AGENT: Number, as 555-0123.
+PATIENT: Yes, that's correct.
+AGENT: Please provide your date of birth.
+PATIENT: My date of birth is November 3, 1997.
+AGENT: Your name is David Lee, your date of birth as November 3rd, 1997, and your phone number as 555-0123.
+PATIENT: That's right. Could you let me know the available times for my rescheduled appointment?
+AGENT: See further right now, but I can make sure our Clinic support team follows up with you. Would you like me to have them contact? You about rescheduling your appointment?
+PATIENT: I'd prefer to reschedule it now if possible. Can you check for any morning slots before 11am or after 4pm next week?
+AGENT: I'm unable to access your records right now so I can't reschedule your appointment directly. I'll connect you to our Clinic support team so they can help you right away.
+PATIENT: Okay, please connect me to the Clinic support team. Thank you.
+AGENT: You to a representative please. Wait hello you've reached the pretty good. AI test line goodbye.
+PATIENT: Thank you, goodbye.

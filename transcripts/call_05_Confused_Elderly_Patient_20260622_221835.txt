@@ -1,0 +1,36 @@
+Scenario: Confused Elderly Patient
+Call SID: CA505dbc87943a0e7826904be1b76ba5b2
+Time: 2026-06-22 22:18:35.666420
+==================================================
+
+PATIENT: Hello, this is Robert Johnson. My daughter told me to make an appointment, but I'm not sure what kind. Could you help me with that?
+AGENT: Part of pretty good. AI. Am I speaking with John?
+PATIENT: No, this is Robert Johnson. I might be a bit confused, but I'm calling about an appointment my daughter mentioned. Can you help me figure that out?
+AGENT: Hello.
+PATIENT: Hello, this is Robert Johnson. I'm calling to make an appointment, but I'm not sure what kind. Can you assist me with that?
+AGENT: Calling for yourself. Hi there. How can I help you today?
+PATIENT: Hi, yes, I'm trying to make an appointment. My daughter said I needed one, but I'm not sure what kind. Could you help me with that?
+AGENT: I can help get started. May I have your full name and date of birth.
+PATIENT: Sure, it's Robert Johnson, and my date of birth is April 12, 1948.
+AGENT: I have your name as Robert Johnson and your date of birth as April 12th. 1948 is that correct?
+PATIENT: Yes, that's correct.
+AGENT: Your first and last, could you please spell your first and last name for me?
+PATIENT: Sure, it's R-O-B-E-R-T J-O-H-N-S-O-N.
+AGENT: Thanks, could you please spell your last name as well?
+PATIENT: Of course, it's J-O-H-N-S-O-N.
+AGENT: Would you like to use your phone number to look up your records?
+PATIENT: Yes, that would be fine. My phone number is the best way to find my records.
+AGENT: With us.
+PATIENT: Yes, please use my phone number to look up my records.
+AGENT: Could you please tell me the phone number? You have on file with us?
+PATIENT: Oh dear, I believe it's 555-123-4567. That's the number my daughter usually uses for things like this.
+AGENT: Thanks for sharing that.
+PATIENT: You're welcome. So, about that appointment—what do I need to do next?
+AGENT: 3 4.
+PATIENT: I'm sorry, I didn't quite catch that. Could you repeat it, please?
+AGENT: So, I can't.
+PATIENT: Oh, I see. Could we try finding my records another way? My daughter really wants me to get this appointment sorted.
+AGENT: I understand since I'm unable to verify your information right now. I'll make sure our Clinic support team follows up with you. Please stay on the line while I document your request connecting you to a representative.
+PATIENT: Alright, I'll wait. Thank you for helping me with this.
+AGENT: Hello, you've reached the pretty good. AI test line, goodbye.
+PATIENT: Thank you, goodbye.

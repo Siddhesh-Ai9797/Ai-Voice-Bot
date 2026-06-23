@@ -1,0 +1,8 @@
+Scenario: Weekend Appointment Request
+Call SID: CAebb3f93a5c8891453be6542ac76c4afd
+Time: 2026-06-22 22:36:47.722286
+==================================================
+
+PATIENT: Hi, this is Michael Brown. I'd like to schedule an appointment, please.
+AGENT: Part of pretty good. AI. Am I speaking with John?
+PATIENT: No, this is Michael Brown. I'm calling to schedule an appointment.

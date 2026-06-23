@@ -1,0 +1,30 @@
+Scenario: Multiple Requests In One Call
+Call SID: CA1bb0f8b4f042df9d9b8d384be770660a
+Time: 2026-06-22 22:29:30.777452
+==================================================
+
+PATIENT: Hi, this is James Wilson. I'm calling to refill my cholesterol medication, schedule a follow-up appointment with Dr. Smith, and ask about your parking situation.
+AGENT: Part of pretty good. AI. Am I speaking with John?
+PATIENT: No, this is James Wilson. I'm calling about my medication refill, an appointment with Dr. Smith, and some information on parking.
+AGENT: Thanks for letting me know. James, are you calling to request a medication refill for yourself or for someone else?
+PATIENT: It's for myself. I need a refill of Atorvastatin 20mg.
+AGENT: Please provide your date of birth.
+PATIENT: Sure, it's August 14, 1975.
+AGENT: Just to confirm, I have your name as James Wilson.
+PATIENT: Yes, that's correct.
+AGENT: Would you like to use your phone number to look up your record?
+PATIENT: Yes, that works for me.
+AGENT: Have on file with, please tell me the phone number. You have on file with us.
+PATIENT: It's 555-123-4567.
+AGENT: I have your phone number is 5551234567.
+PATIENT: Yes, that's correct.
+AGENT: 14th.
+PATIENT: Great, could you help me with the refill and appointment now?
+AGENT: I can't access your. I'm unable to proceed right now.
+PATIENT: Could you try again or connect me with someone who can help?
+AGENT: Thank you, please.
+PATIENT: Sure, I'll hold on. Could you let me know when you can assist with my requests?
+AGENT: Connecting you to a representative.
+PATIENT: Thank you. I'll wait for the representative.
+AGENT: Hello, you've reached the pretty good. AI test line, goodbye.
+PATIENT: Thank you, goodbye.

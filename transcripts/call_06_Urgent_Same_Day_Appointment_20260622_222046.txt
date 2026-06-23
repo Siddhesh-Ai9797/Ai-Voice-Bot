@@ -1,0 +1,28 @@
+Scenario: Urgent Same Day Appointment
+Call SID: CAe6b6400456c837268d01c30869146218
+Time: 2026-06-22 22:20:46.630558
+==================================================
+
+PATIENT: Hi, this is Emily Chen. I have a high fever of 103 since last night, and I need a same-day appointment.
+AGENT: Part of pretty good. AI. Am I speaking with John?
+PATIENT: No, this is Emily Chen. I really need to see a doctor today because of my high fever.
+AGENT: Thanks for letting me know. Emily, are you calling to schedule this appointment for yourself or for someone else?
+PATIENT: I'm calling to schedule it for myself.
+AGENT: Please provide your date of birth.
+PATIENT: My date of birth is September 5, 1994.
+AGENT: I have your name is Emily Chen and your date of birth as September 5th 1994.
+PATIENT: Yes, that's correct. Can you please schedule my appointment for today?
+AGENT: Name for me, please. Spell your first and last name for me.
+PATIENT: Sure, it's Emily, E-M-I-L-Y, and Chen, C-H-E-N.
+AGENT: Would you like to use your phone number to look up your record?
+PATIENT: Yes, that's fine.
+AGENT: If you're not, please tell me a phone number. You have on file with us.
+PATIENT: It's 555-123-4567.
+AGENT: I have your phone number is 5551234567.
+PATIENT: Yes, that's right. Can you please confirm a same-day appointment for me?
+AGENT: 1994.
+PATIENT: Yes, my birth year is 1994. Can I get an appointment today, please?
+AGENT: 1 moment, while I try to get you scheduled connecting you to a representative.
+PATIENT: Thank you. I appreciate it.
+AGENT: Hello, you reached the pretty good. AI test line, goodbye.
+PATIENT: Thank you, goodbye.

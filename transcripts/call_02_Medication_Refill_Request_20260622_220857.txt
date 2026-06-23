@@ -1,0 +1,26 @@
+Scenario: Medication Refill Request
+Call SID: CA7e5acd08fee853527e03a8b5c559a811
+Time: 2026-06-22 22:08:57.236787
+==================================================
+
+PATIENT: Hi, this is Maria Garcia. I'm calling to refill my blood pressure medication, Lisinopril 10mg.
+AGENT: Part of pretty good AI. Am I speaking with job?
+PATIENT: No, I'm just a patient calling about a medication refill. Could you help me with that?
+AGENT: I can help with your medication refill, please provide your full name and date of birth.
+PATIENT: Sure, my name is Maria Garcia and my date of birth is July 22, 1972.
+AGENT: Just to confirm, my name is Maria Garcia and your date of birth is July 22nd 1972. Is that correct? If so, could you please spell your first? And last name for me,
+PATIENT: Yes, that's correct. My first name is spelled M-A-R-I-A and my last name is G-A-R-C-I-A.
+AGENT: Would you like me to use your phone number to look up your record if so, please provide the number you have on file with us, if you're not sure, I can confirm your name and date of birth. Again,
+PATIENT: Sure, you can use my phone number. It's 555-0199.
+AGENT: I have your phone number is 555-0199 and your date of birth is July 22nd 1972.
+PATIENT: Yes, that's correct. Can you confirm the refill for my Lisinopril 10mg?
+AGENT: Can you please confirm your date of birth 1 more time?
+PATIENT: Of course, my date of birth is July 22, 1972.
+AGENT: Something's not right. I'm unable to verify your information in the system. I'll make sure a clinic support team follows up with you about your medication refill request, please stay on the line while I document this for our team.
+PATIENT: I really need to get this sorted out soon since I only have a few days of medication left. Can you tell me how long the follow-up might take?
+AGENT: So I'll connect you to our patient support team for further help.
+PATIENT: Okay, thank you. I'll wait to speak with them.
+AGENT: Connecting you to a representative, please wait.
+PATIENT: Alright, thank you.
+AGENT: Pretty good. AI test line, goodbye.
+PATIENT: Thank you, goodbye.

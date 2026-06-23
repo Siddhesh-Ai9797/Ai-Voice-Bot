@@ -1,0 +1,38 @@
+Scenario: Insurance Question
+Call SID: CA92343e8af109572ccc60af2c9207b9d8
+Time: 2026-06-22 22:36:47.720764
+==================================================
+
+PATIENT: Hi, my name is Susan White. I'm calling to see if your clinic accepts Aetna PPO insurance.
+AGENT: Pretty good AI. Am I speaking with John?
+PATIENT: No, I'm Susan White. I'm trying to find out if your clinic accepts Aetna PPO insurance.
+AGENT: You know, Susan, are you calling to check insurance for yourself or for someone else?
+PATIENT: I'm calling to check the insurance for myself.
+AGENT: Please provide your date of birth.
+PATIENT: Sure, my date of birth is January 8, 1981.
+AGENT: Confirm. I have your name as Susan, white and your date of birth as January 8th 1981.
+PATIENT: Yes, that's correct.
+AGENT: Please spell your first.
+PATIENT: Sure, it's S-U-S-A-N.
+AGENT: could you please spell your
+PATIENT: Certainly, it's W-H-I-T-E.
+AGENT: Would you like to use your phone number to look up your record if so, please provide the number you have on file with us.
+PATIENT: Sure, my phone number is 555-123-4567.
+AGENT: Date of birth again.
+PATIENT: It's January 8, 1981.
+AGENT: please provide the
+PATIENT: The insurance I'm checking is Aetna PPO.
+AGENT: haven't told me the
+PATIENT: I'm calling to see if your clinic accepts Aetna PPO insurance. Can you help with that?
+AGENT: Insurance details. I understand to help you with your insurance question. I'll need your phone number on file. Could you please provide it?
+PATIENT: I already provided my phone number; it's 555-123-4567. Can you confirm if you accept Aetna PPO?
+AGENT: I have your number at 55512 3 4 5.
+PATIENT: The correct number is 555-123-4567. Can you check if you accept Aetna PPO with that information?
+AGENT: To confirm your insurance. Please provide your correct phone number so I can look up your information and help with your insurance question.
+PATIENT: The correct phone number is 555-123-4567. Can you confirm if you accept Aetna PPO?
+AGENT: I have your number is 555-123-4567.
+PATIENT: Yes, that's correct. Can you let me know if you accept Aetna PPO insurance?
+AGENT: 14 followed up.
+PATIENT: Great, can you tell me if the clinic accepts Aetna PPO insurance?
+AGENT: Patient support team so they can help with your insurance question. Please stay on the line. Connecting you to a representative. Please. Wait. Hello.
+PATIENT: Hello, I'm Susan White. I'm trying to confirm if your clinic accepts Aetna PPO insurance.

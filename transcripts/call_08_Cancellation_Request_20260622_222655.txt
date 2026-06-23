@@ -1,0 +1,28 @@
+Scenario: Cancellation Request
+Call SID: CA2f309969cf80e461a227da9d478e0d52
+Time: 2026-06-22 22:26:55.206930
+==================================================
+
+PATIENT: Hi, this is Jennifer Davis. I'm calling to cancel my appointment for tomorrow.
+AGENT: Part of pretty good. AI. Am I speaking with John?
+PATIENT: No, this is Jennifer Davis. I'm looking to cancel my appointment scheduled for tomorrow.
+AGENT: Please provide the full name and date of birth of the patient whose appointment you'd like to cancel.
+PATIENT: Sure, it's Jennifer Davis, and my date of birth is February 28, 1993.
+AGENT: Just to confirm, I have your name is Jennifer Davis and your date of birth is February 28th.
+PATIENT: Yes, that's correct. Can you let me know if there's a cancellation fee as well?
+AGENT: if so, could you
+PATIENT: Could you let me know if I’ll be charged a cancellation fee, please?
+AGENT: If so.
+PATIENT: If there is a cancellation fee, please let me know.
+AGENT: I'll check on that for you before I can access your record. Could you please provide the phone number you have on file with us? If you're not sure, just let me know.
+PATIENT: Sure, the phone number on file should be 555-123-4567.
+AGENT: I have your phone number is 5551234567 and your date of birth is February 28th. 1993.
+PATIENT: Yes, that's right. Could you check on that cancellation fee for me?
+AGENT: Confirm your date of birth for me.
+PATIENT: My date of birth is February 28, 1993.
+AGENT: Something's not right. I can't perceive further right now but I can make sure our Clinic support to you Falls up with you.
+PATIENT: Could you try checking one more time if there's a cancellation fee or if my appointment is listed for tomorrow?
+AGENT: and,
+PATIENT: And if you can confirm the time of the appointment, that would be great.
+AGENT: Please wait hello you've reached the pretty good. AI test line goodbye.
+PATIENT: Thank you, goodbye.
