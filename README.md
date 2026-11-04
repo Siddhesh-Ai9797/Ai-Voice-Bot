@@ -39,7 +39,7 @@ cd pgai-voice-bot
 ### 2. Install dependencies
 
 ```bash
-pip install twilio openai python-dotenv flask requests
+pip install -r requirements.txt
 ```
 
 ### 3. Configure environment variables
