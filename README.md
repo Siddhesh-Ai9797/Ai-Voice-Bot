@@ -1,126 +1,146 @@
-# PGAI Voice Bot
+# AI Voice Bot for Testing Healthcare Voice Agents
 
-An automated voice bot that simulates patients calling Pretty Good AI's Athena healthcare voice agent. The bot makes outbound calls, conducts realistic patient conversations, records and transcribes both sides, and identifies bugs in the agent's responses.
+An automated caller that stress tests a healthcare AI voice agent over real phone calls. It plays 10 different fictional patients, each with their own goal, voice and personality, and keeps talking until the request is truly resolved. Every call is recorded and transcribed, and the results became a report of 10 bugs in the agent under test.
 
-## Architecture
+Built for the Pretty Good AI engineering challenge, against their Athena test line.
 
-See `architecture.md` for full details.
+## Results
 
-## Project Structure
-pgai-voice-bot/
-├── main.py           # Entry point — starts server and orchestrates calls
-├── server.py         # HTTP server handling Twilio webhooks
-├── patient.py        # GPT-4o patient brain and OpenAI TTS
-├── call_manager.py   # Twilio call management and recording downloads
-├── transcript.py     # Transcript saving
-├── scenarios.py      # 10 patient personas and test scenarios
-├── bug_report.md     # Bugs found in Athena agent
-├── architecture.md   # System design decisions
-├── .env.example      # Environment variable template
-├── transcripts/      # Saved call transcripts
-└── recordings/       # Full call recordings (mp3)
+| Metric | Value |
+|---|---|
+| Real phone calls made | 11 |
+| Patient scenarios | 10 |
+| Bugs found | **10**, including 3 critical |
+| Total cost | About $5 |
 
-## Requirements
+The full write up is in [bug_report.md](bug_report.md). Transcripts are in `transcripts/` and call recordings in `recordings/`.
 
-- Python 3.11+
-- Twilio account (paid, not trial)
-- OpenAI API key
-- ngrok
+## How it works
 
-## Setup
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/Siddhesh-Ai9797/pgai-voice-bot.git
-cd pgai-voice-bot
+```mermaid
+sequenceDiagram
+    participant Bot as main.py
+    participant Tw as Twilio
+    participant Ag as Voice agent under test
+    participant Srv as Webhook server via ngrok
+    participant AI as GPT-4o and OpenAI TTS
+    Bot->>Tw: Place outbound call
+    Tw->>Ag: Ring the test line
+    Tw->>Srv: POST /start
+    Srv->>AI: Write the patient's opening line
+    AI-->>Srv: Text and audio
+    Srv-->>Tw: Play audio, listen for speech
+    loop Until resolved, goodbye, or 20 turns
+        Ag->>Tw: Agent speaks
+        Tw->>Srv: POST /respond with transcribed speech
+        Srv->>AI: Full history to next patient reply
+        AI-->>Srv: Text and audio
+        Srv-->>Tw: Play reply
+    end
+    Bot->>Tw: Download recordings
 ```
 
-### 2. Install dependencies
+1. A small HTTP server starts on port 8080, and ngrok gives it a public URL for Twilio.
+2. For each scenario, Twilio calls the agent's number and hits `/start` when it connects.
+3. GPT-4o writes the patient's first line from a detailed persona, and OpenAI TTS turns it into speech in that patient's voice.
+4. Twilio transcribes each agent reply and posts it to `/respond`. GPT-4o reads the whole conversation so far and writes the next patient line.
+5. The patient is told not to hang up until the goal is fully met, such as a confirmed date and time. The loop stops when the conversation ends or after 20 turns.
+6. Each transcript is saved, and the full two sided recordings are downloaded from Twilio at the end.
+
+## Scenarios
+
+| # | Patient | Scenario |
+|---|---|---|
+| 1 | John Smith | Schedule a routine appointment |
+| 2 | Maria Garcia | Medication refill |
+| 3 | David Lee | Reschedule an appointment |
+| 4 | Susan White | Insurance question |
+| 5 | Robert Johnson | Confused elderly patient |
+| 6 | Emily Chen | Urgent same day appointment |
+| 7 | Michael Brown | Weekend appointment |
+| 8 | Jennifer Davis | Cancellation |
+| 9 | James Wilson | Several requests in one call |
+| 10 | Patricia Martinez | Unclear, rambling patient |
+
+Each patient uses a different OpenAI TTS voice matched to the persona, which also tests the agent's speech recognition across voices.
+
+## Bugs found
+
+| # | Bug | Severity | Calls affected |
+|---|---|---|---|
+| 1 | Assumes the caller's identity from the phone number | Critical | All 11 |
+| 2 | Patient verification fails even with correct details | Critical | All 11 |
+| 3 | Transfer to a representative hangs up on the caller | Critical | All 11 |
+| 4 | Garbled and incomplete replies | High | 8 of 11 |
+| 5 | Asks for date of birth several times in one call | High | 6 of 11 |
+| 6 | Cannot cancel and rebook in the same call | High | 1 of 11 |
+| 7 | Contradictory appointment confirmations | High | 1 of 11 |
+| 8 | Drops calls early | Medium | 1 of 11 |
+| 9 | Cannot answer basic clinic questions | Medium | 1 of 11 |
+| 10 | Speech recognition errors lead to wrong actions | Medium | 2 of 11 |
+
+Each bug has the calls it appeared in, why it matters for patients, and the expected behavior.
+
+## Design decisions
+
+* **Twilio and ngrok instead of a hosted server.** Twilio handles dialing, recording and speech recognition, and ngrok exposes a local server. Nothing needed to be deployed, and the whole run cost about $5.
+* **A goal driven patient, not a script.** Because the patient only stops when its request is resolved, the bot finds failures a fixed script would miss.
+* **Five small modules.** Personas, the patient brain, webhooks, call management and transcripts are separate, so a new scenario or a different TTS provider is a small change.
+
+More detail is in [architecture.md](architecture.md). [ai_debugging_session.md](ai_debugging_session.md) shows how I debugged the bot itself, such as Twilio calling before the server was ready.
+
+## Project structure
+
+```
+main.py            Starts the server and runs all scenarios
+server.py          Twilio webhooks for /start and /respond
+patient.py         GPT-4o patient replies and OpenAI TTS
+call_manager.py    Outbound calls and recording downloads
+scenarios.py       The 10 patient personas
+transcript.py      Saves each conversation
+transcripts/       One transcript per call
+recordings/        Full call recordings
+bug_report.md      The 10 bugs found
+```
+
+## Running it
+
+You need a paid Twilio account, an OpenAI key and ngrok.
 
 ```bash
 pip install -r requirements.txt
-```
-
-### 3. Configure environment variables
-
-```bash
 cp .env.example .env
 ```
 
-Fill in your values in `.env`:
-TWILIO_ACCOUNT_SID=your_account_sid
+Fill in `.env`:
 
-TWILIO_AUTH_TOKEN=your_auth_token
+| Variable | Description |
+|---|---|
+| TWILIO_ACCOUNT_SID | Twilio account SID |
+| TWILIO_AUTH_TOKEN | Twilio auth token |
+| TWILIO_PHONE_NUMBER | Your Twilio number, like +15551234567 |
+| OPENAI_API_KEY | OpenAI key |
+| TARGET_NUMBER | The number of the voice agent to test |
+| SERVER_URL | Your ngrok URL |
 
-TWILIO_PHONE_NUMBER=+1xxxxxxxxxx
-
-OPENAI_API_KEY=your_openai_key
-
-TARGET_NUMBER=+18054398008
-
-SERVER_URL=https://your-ngrok-url.ngrok-free.app
-
-### 4. Start ngrok
-
-In a separate terminal:
+Start ngrok in one terminal, put its URL in `SERVER_URL`, then run the bot:
 
 ```bash
 ngrok http 8080
-```
-
-Copy the forwarding URL and set it as `SERVER_URL` in your `.env` file.
-
-### 5. Run the bot
-
-```bash
 python main.py
 ```
 
-The bot will make 10 calls sequentially with 3 minutes between each call. Total runtime is approximately 35-40 minutes.
+The bot makes the 10 calls one after another with a 3 minute gap, which takes about 35 to 40 minutes.
 
-## How It Works
+## Tech stack
 
-1. `main.py` starts a local HTTP server on port 8080
-2. ngrok exposes that server to the public internet
-3. For each scenario the bot calls the target number via Twilio
-4. Twilio hits `/start` on our server — GPT-4o generates the patient's opening line
-5. OpenAI TTS converts it to audio and Twilio plays it on the call
-6. Their agent responds — Twilio transcribes it and sends it to `/respond`
-7. GPT-4o reads the agent's response and generates the next patient reply
-8. This loop continues until the conversation ends naturally or hits 20 turns
-9. Transcripts are saved to `transcripts/` and full recordings downloaded from Twilio
+| Area | Tools |
+|---|---|
+| Telephony | Twilio voice, recording and speech recognition |
+| Patient brain | OpenAI GPT-4o |
+| Voice | OpenAI TTS |
+| Server | Python http.server, ngrok |
 
-## Test Scenarios
+## Author
 
-| # | Patient | Scenario |
-|---|---------|----------|
-| 1 | John Smith | Simple appointment scheduling |
-| 2 | Maria Garcia | Medication refill request |
-| 3 | David Lee | Appointment rescheduling |
-| 4 | Susan White | Insurance question |
-| 5 | Robert Johnson | Confused elderly patient |
-| 6 | Emily Chen | Urgent same-day appointment |
-| 7 | Michael Brown | Weekend appointment request |
-| 8 | Jennifer Davis | Cancellation request |
-| 9 | James Wilson | Multiple requests in one call |
-| 10 | Patricia Martinez | Unclear and rambling patient |
-
-## Cost Estimate
-
-- Twilio phone number: ~$1.15/month
-- Twilio call charges: ~$0.013/min × 10 calls × 3 min = ~$0.39
-- OpenAI TTS: ~$0.015 per 1K characters × 10 calls = ~$1.50
-- OpenAI GPT-4o: ~$2.00 for 10 calls
-- **Total: ~$5.00**
-
-## Environment Variables
-
-| Variable | Description |
-|----------|-------------|
-| TWILIO_ACCOUNT_SID | Your Twilio Account SID |
-| TWILIO_AUTH_TOKEN | Your Twilio Auth Token |
-| TWILIO_PHONE_NUMBER | Your Twilio phone number in E.164 format |
-| OPENAI_API_KEY | Your OpenAI API key |
-| TARGET_NUMBER | Pretty Good AI test number |
-| SERVER_URL | Your ngrok public URL |
+Siddhesh Patil, MS in Artificial Intelligence, DePaul University
